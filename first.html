@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--<script src="myscript.js"></script>-->
+    <style>
+        /* 디자인적용먼저 */
+    </style>
+    <script>
+        //alert("Hello world!!"); 
+        // 2번방식
+        // 태그를 제어, 문법으로 설정하여 메모리 할당이후 나중에 적용가능
+        //document.write("환영합니다.");
+        var age;
+        age =10;
+        document.write(age);
+        document.write("<br>"); //줄바꿈문자
+
+        age = 20;
+        document.write(age+"<br>");
+
+        age="hellow"; //var형식은 타입체크를 하지 않는다.
+        document.write(age+"<br>");
+
+        var age = "안녕";//같은 이름으로 변수를 여러번 선언이 가능
+        document.write(age + "<br>");
+
+        var name;
+        document.write(name + "<br>");
+
+        name = "홍길동";//var 선언된 변수의 호이스팅(hoisting) 변수 밑에다가 적어논 경우
+        name ='이순신'
+
+        //es6
+        //var,let,cont
+
+        let num;
+        num =1;
+        document.write(num + "<br>");
+        
+        num=100;
+        document.write(num + "<br>");
+
+        num="홍길동";
+        document.write(num + "<br>");
+
+        let num;//오류가 뜨면 브라우저에 f12 눌러서 확인이가능하다. 같은이름의 변수를 선언 할 수 없다.
+        num =1000;
+        document.write(num + "<br>");
+    </script> 
+</head>
+<body>
+
+    <!-- <p> 화면출력 </p> -->
+
+    <script>
+        // 메모리할당이후 적용하기위해 밑에 작성
+        // 1.외부파일(.js) 2.<script> 3. 임베디드(태그안에작성)
+
+    </script>
+    <!-- <button type="button" onclick="javascript:alert('Hello world!!');">경고창 실행</button> -->
+       <!-- 3. 태그안에 직접작성하는방식 --> 
+</body>
+</html>
