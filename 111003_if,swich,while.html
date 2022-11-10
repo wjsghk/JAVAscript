@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .blue{
+            color : blue;
+        }
+        .red{
+            color: red;
+            font-size: 20px;
+        }
+        table{
+            border-spacing: 0;
+        }
+        .odd{
+            background-color: rgb(171, 245, 245);
+        }
+        .even{
+            background-color: rgb(216, 183, 247);
+        }
+    </style>
+    <script>
+        //조건식(if문)
+        //0이면 false 나머지 값은 모두 true로 한다.
+        //null or ""(=빈문자) 이면 false
+        //undefined이면 false
+
+        // let num =3;
+        // if(num){//true =>3
+        //     document.write(num);
+        // }
+
+        // let num =0;
+        // if(num){ //false<=0
+        //     document.write(num);
+        // }
+
+        // if("hellow"){
+        //     document.write("hellow world"+"<br>");
+        // }
+
+
+        //메세지창 ,재차확인하는 용도로 많이 사용한다.(확인:true,축소:false)
+        // let result = confirm("파일을 삭제하겠습니까")
+        // if(result){
+        //     document.write("파일이 삭제되었습니다.")
+        // }else{
+        //     document.write("파일이 삭제취소");
+        // }
+
+
+
+        //선택문switch문
+        // var site= prompt("네이버 ,다음 네이트,구글,중 즐겨 사용하는 포털검색 사이트는?","");
+        // var url;
+        
+        // switch(site){
+        //     case"구글":url="www.google.com";
+        //     break;
+        //     case "다음" : url="www.daum.net";
+        //     break;
+        //     case "네이버" : url="www.naver.com";
+        //     break;
+        //     case "네이트" : url="www.nate.com";
+        //     break;
+        //     default:alert("보기중에 없는 사이트 입니다.");
+        // }
+        //저장된 주소로 이동
+        // if(url){
+        //     location.href="http://"+url;
+        // }
+
+
+
+
+        //반복문(while문)
+        // 변수
+        // while(변수로 조건식){
+        //     실행문,
+        //     변수를 사용한 증감식
+        // }
+        //스타일 참조
+        // let i =30;
+        // while(i>=10){
+        //     if(i%2==0){
+        //         document.write("<p class='blue'>" + i +"</p>");
+        //     }else{
+        //         document.write("<p class='red'>" + i +"</p>");
+        //     }
+        //     i--;
+        // }
+        
+        //====================================p.84 문제1
+        // var i=1;
+        // while(i<=9){
+        //     document.write("5x" + i + "=" + i*5,"<br>");
+        //     i++;
+        // }
+        
+        
+        //====================================p.84 문제2 바둑판형식  (tr가로 td세로)
+
+        // var num = 1;
+        // var t = "<table border='1'>";
+        // for(var i = 1; i <= 5; i++) {
+        //     t += "<tr>";
+        //     for(var k = 1; k <= 5; k++) {
+        //         t += "<td>" + num + "</td>";
+        //         num++;
+        //     }
+        //     t += "</tr>";
+        // }
+        // t += "</table>";
+
+        // document.write(t);
+
+        //====================================p.84 문제2 바둑판형싱에 색깔 넣기 플러스
+
+            // var num=1;
+            // var t="<table border= '1'>";
+            // for(var i=1;i<=5;i++){
+            // t+="<tr>";
+            // for(var j=1;j<=5;j++){
+            //     if(i%2==1){
+            //     t+="<td class='blue'>" + num +"</td>"
+            // }else{
+            //     t+="<td class='red'>" + num +"</td>"
+            // }
+            // num++;   
+            // }
+            //     t+="</tr>"
+            // }
+            // t +="</table>";
+            // document.write(t);
+      
+
+        //===========================================9단표 만들기
+
+        // document.write("<h1>구구단표</h1>");
+        // document.write("<table border=1 width=50%>");
+        // for(var i=1;i<=9;i++){
+        //     for(var j=1;j<=9;j++){
+        //         document.write("<td>" + i* j + "</td>");
+        //     }
+        //     document.write("<tr>")
+        // }
+        // document.write("<table>");
+        //=========================================9단 색깔 넣기 스타일 참조
+            document.write("<h1>구구단표</h1>");
+
+        document.write("<table width=50%");
+        for(let i=1;i<=9;i++){
+           
+            if(i % 2== 1){
+                document.write("<tr class='odd'>");
+            }else{   
+                document.write("<tr class='even'>");
+            }
+            for(let j=1;j<=9;j++){
+                document.write("<td>" + i * j + "</td>");
+            }
+            document.write("<tr>");
+        }
+        document.write("<table>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

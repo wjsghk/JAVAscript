@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // let today = new Date();//속성, 기능 
+        // document.write(today.getFullYear()+"<br>"); //2022년
+        // document.write(today.getMonth()+ 1 +"<br>");//0~11월
+        // document.write(today.getDate()+ "<br>");//일
+        // document.write(today.getDay()+ "<br>");//0~6 0은 일요일,4는 목요일
+
+        // let day = today.getDay()
+            
+        // switch (day) {
+        //     case 0:document.write("일요일");
+        //     break;
+        //     case 1:document.write("월요일");
+        //     break;
+        //     case 2:document.write("화요일");
+        //     break;
+        //     case 3:document.write("수요일");
+        //     break;
+        //     case 4:document.write("목요일");
+        //     break;
+        //     case 5:document.write("금요일");
+        //     break;
+        //     case 6:document.write("토요일");
+        //     break;
+        //     }
+
+            document.write("<br>====================================================<br>");
+
+            // day = today.getDay()
+            // //2000년도로 set=> 셋팅!!
+            // today.setFullYear(2000);
+            // today.setMonth(0);
+            // today.setDate(1);
+            // document.write(today.getFullYear()+"<br>"); //2020년
+            // document.write(today.getMonth()+ 1 +"<br>");//1월
+            // document.write(today.getDate()+ "<br>");//1일
+            // document.write(today.getDay()+ "<br>");//6
+
+            document.write("<br>====================================================<br>");
+            
+            // let start = new Date(2020,7,1);
+
+            // document.write(start.getFullYear()+"<br>"); //2020년
+            // document.write(start.getMonth()+ 1 +"<br>");//8월
+            // document.write(start.getDate()+ "<br>");//1일
+            // document.write(start.getDay()+ "<br>");//6
+
+            document.write("<br>====================================================<br>");
+            var today=new Date();
+            var nowYear = today.getFullYear();
+
+            var theDate= new Date(nowYear,11,31);
+            var diffDate=theDate.getTime()-today.getTime();
+
+            var result=Math.ceil(diffDate/(60*1000*60*24));
+            document.write("연말 D-day" + result + "일 남았습니다.");
+
+            document.write("<br>====================================================<br>");
+            
+            //난수 구하는 방법 자바에서는 캐스팅 연산자가 필요하지만 스크릅에서는 필요없다는  차이점
+            for(let i= 1;i<=10;i++){
+                let ran = Math.floor(Math.random()*10) +1;
+                document.write(ran + "<br>");
+            }
+
+            document.write("<br>====================================================<br>");
+            
+            //가위바위보 게임 만들기
+            // document.write("<h1>1.가위 2.바위 3.보 게임</h1>")
+            // let me = prompt("숫자입력","");
+            // let com = Math.floor(Math.random()*3) +1;//1~3난수 가위바위보
+            // document.write("<img src= \"images/game_" + com + ".jpg\">");
+            // if(com == me){
+            //     document.write("<img src=\"images/4.jpg\">");
+            // }else{
+            //     document.write("<img src=\"images/5.jpg\">");
+            // }
+
+            document.write("<br>====================================================<br>");
+            
+            //컴퓨터와 가위바위보 만들기
+            document.write("<h1>1.가위 2.바위 3.보 게임</h1>")
+            let me = prompt("숫자입력","");
+            let com = Math.floor(Math.random()*3) +1;//1~3난수 가위바위보
+            document.write("<img src= \"images/game_" + me + ".jpg\">"+"<h1>me</h>"+"<br>");
+            document.write("<img src= \"images/game_" + com + ".jpg\">"+"<h1>com</h>"+"<br>");
+            if(com < me){
+                document.write("you win");
+            }else if(com > me){
+                document.write("you lose");
+            }else{
+                document.write("비겼습니다.");
+            }
+
+            
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
