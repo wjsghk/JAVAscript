@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    let str = new String("Hellow");
+    document.write(str+"<br>");
+
+    let str2 = "world";
+    document.write(str2+"<br>");
+
+    let t = "hello thank you good luck to you";
+
+
+    document.write(t.match("luck")+"<br>"); //match=>21  "lucks"를 칠경우 없는 단어라 null값이 나온다.
+    document.write(t.search("you")+"<br>");//12
+    document.write(t.search("yous")+"<br>");//-1 
+    
+    //p109
+    let userName = prompt("당신의 영문 이름은?","");
+    let upperName = userName.toUpperCase();
+    document.write(upperName,"<br>");
+    //substring(시작인덱스, 끌 인덱스)
+    //substring(시작인덱스)
+    let userNum = prompt("당신의 연락처는?","");
+    let result = userNum.substring(0,userNum.length-4)+"****";
+    document.write(result,"<br>");
+
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

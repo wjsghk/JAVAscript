@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //function으로 선언한 함수는 호이스팅이 되어진다.
+        //function 함수명(매개변수1,...){
+        //     실행문;
+        // }
+        
+        // let a2 = add(5,8); //함수의 호이스팅
+        // document.write(a2+"<br>");//13
+
+
+        //함수의 선언
+        //function add (x,y){
+        //  return x + y;
+        //}
+        //let a =add(10,20);
+        //document.write(a);
+        //30
+        
+        
+        //함수의 표현식(익명함수)방법
+        //호이스팅이 불가하다.//=>오류가 난다.
+        // let add =function(x,y){
+        //     return x+y;
+        // }
+        // let a = add(10,20);
+        // document.write(a); 
+
+        //생성자함수방법,잘 사용 안함
+        // let add = new Function('x','y','return x + y')
+        // let a =add (10,20);
+        // document.write(a);
+        
+        //화살표함수방법
+        // let add = (x,y) => x + y;//출력함수가 아니면 모두 return이 생략
+        // let a = add(10,20);
+        // document.write(a);//30
+
+        var color = ["white","yellow","aqua","purple"];
+        var i =0;
+        function changeColor(){
+            i++;
+            if(i>=color.length){
+                i=0;
+            }
+            var bodyTag = document.getElementById("theBody");
+            bodyTag.style.backgroundColor=color[i];
+        }
+        
+        //====================================================
+        //argument
+        function sum(){
+            let sum=arguments[0]+arguments[1]+arguments[2];
+            document.write(sum+"<br>");
+        }
+        sum(10,20,30); //60
+        
+        
+        function sum(){
+            let sum1=0;        
+            for(let i=0;i<arguments.length;i++){
+                sum1 += arguments[i];
+            }
+            document.write(sum1+"<br>");
+        }
+        sum(10,20,30,40,50); //150
+
+        //p.140     ============================================================
+        function testAvg(arrData){
+        let sum3 =0;
+        //2번째
+        for(var i = 0; i<arrData.length;i++){
+            sum3 += Number(prompt(arrData[i]+"점수는 ?","0"));
+        }
+        //세번째
+        let avg=sum3/arrData.length;
+        return avg;
+        }
+
+        //첫번째
+        let arrSubject = ["국어","수학"];
+        let result = testAvg(arrSubject);
+
+        document.write("평균 점수는" + result + "점입니다.");
+
+    </script>
+</head>
+<body id="theBody">
+    <button onclick="changeColor();">배경색바꾸기</button>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //배열 내부의 데이터 타입이 서로 다를 수 있다.
+        //배열의 크기는 동적을 변경될 수 있다.
+        // 자바스크립트의 배열은 일반적인 배열의 동작을 흉내낸 특수한 객체이다.
+        let arr1 =new Array();
+        arr1[0] = 1;
+        arr1[1] = 2;
+        arr1[2] = "hello";
+
+        // 선택해서 출력하면된다.
+
+        //콘솔(중간점검느낌 출력)은 브라우저에 f12를 누르고 콘솔부분을 누르면 확인한다.
+        // console.log(arr1[0]);
+        // console.log(arr1[1]);
+        // console.log(arr1[2]);
+
+        // 콘솔을 for문으로 이용한  방법
+        for(let i=0;i<arr1.length;i++){
+            console.log(arr1[i]);
+        } // 1,2,hellow
+        
+        // 콘솔을 foreach문으로 이용한 방법 세가지를 한번에 출력
+        // arr1.forEach((Element,index,arr1)=>
+        //     console.log(Element)
+        // );
+        // 콘솔을 for문으로 이용한  방법
+        // for(let value in arr1){
+        //     console.log(arr1[value]);
+        // }
+        // 위 세개 방벙중 하나 선택한 출력
+        // let arr2 = new Array(4,5,"world");
+        // for(let value in arr2){
+        //     console.log(arr2[value]);
+        // }
+
+        // let arr3 = [];
+        // arr3[0] = 7;
+        // arr3[1] = 7;
+        // arr3[2] = 7;
+        // for(let value in arr3){
+        //     console.log(arr3[value]);
+        // }
+
+        // let arr = [1234,'test',true];
+        // arr.length = 5; //0~4
+        // for(let value in arr){
+        //     console.log(arr[value]);
+        // }
+        // console.log(arr[4]);
+        // arr[5]='apple';
+        // console.log(arr[5])
+
+        //p102 문제
+        // let arr_1=["사당","교대","방배","강남"];
+        // let arr_2=["신사","압구정","옥수"];
+
+        // let result = arr_1.join("-");
+        // console.log(result); //사당-교대-방배-강남
+
+        // result = arr_1.concat(arr_2);//새로운 배열에 할당한다.
+        // console.log(result);
+
+        // result = arr_1.slice(1,3);
+        // console.log(result);
+
+        // result = arr_1.sort();
+        // console.log(result);
+
+        // result = arr_2.reverse();
+        // console.log(result);
+        
+        // p103문제
+        let greenArr = ["교대", "방배","강남"];
+        let yellowArr = ["미금", "정자","수서"];
+        
+        
+        greenArr.splice(2,1,'서초','역삼'); //배열의 특적위치의 데이터를 삭제하고 동시에 삽입(데이터가 삭제된 위치서 부터 삽입된다.)
+        document.write(greenArr+"<br>"); //(4) ['교대', '방배', '서초', '역삼']
+
+        
+        let data1 = yellowArr.pop();//배열이 마지막 값을 꺼내오면서 삭제
+        document.write(data1+"<br>");//수서
+        document.write(yellowArr+"<br>");//(2) ['미금', '정자']
+
+        
+        let data2 = yellowArr.shift();
+        document.write(data2+"<br>");//미금
+        document.write(yellowArr+"<br>"); //'정자' ,배열이 맨 앞의 값을 꺼내오면서 삭제
+
+        
+        yellowArr.push(data2+"<br>");//배열이 마지막에 갑을 삽입
+        document.write(yellowArr+"<br>");//수서
+
+        
+        yellowArr.unshift(data1+"<br>"); //배열의 맨 앞에 값을 삽입
+        document.write(yellowArr+"<br>");//정자,미금
+
+        //인덱스 번호 알아내기
+        document.write(yellowArr.indexOf("수서")+"<br>"); //-1번
+
+     
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
