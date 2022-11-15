@@ -71,22 +71,18 @@
         }
         sum(10,20,30,40,50); //150
 
-        //p.140     ============================================================
+        //p.140============================================================
         function testAvg(arrData){
         let sum3 =0;
-        //2번째
-        for(var i = 0; i<arrData.length;i++){
+        for(var i = 0; i<arrData.length;i++){//2번째
             sum3 += Number(prompt(arrData[i]+"점수는 ?","0"));
         }
-        //세번째
-        let avg=sum3/arrData.length;
+        let avg=sum3/arrData.length;//세번째
         return avg;
         }
-
-        //첫번째
-        let arrSubject = ["국어","수학"];
+        let arrSubject = ["국어","수학"];    //첫번째
         let result = testAvg(arrSubject);
-
+        
         document.write("평균 점수는" + result + "점입니다.");
 
     </script>
