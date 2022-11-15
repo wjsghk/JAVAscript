@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>//제이쿼리 선언을 위애다 할 때 코드
+        $(function(){//제이쿼리는 $으로 해서 이용한다. vs 자바스크립트에서는 document.getElementById("txt")
+            // $("#txt").css("color","red");  //아이디 선택자  
+            // $(".tit").css("color","blue"); //클래스 선택자
+            // $("h2").css("color","green");  //요소 선택자
+            // $("h1,h2").css("font-size","50px"); //그룹 선택자
+            // $("h3.tit").css("border","1px solid black"); //종속 선택자
+//========================================================================
+            // $("h1").next() .css("color","red"); //동생(다음)요소 선택자
+            // $("h1").parent().css("border","1px solid red");//부모선택자
+//======================================================================
+            // $("#inner_wrap h1").css("color","blue");//하위 전체 요소 선택자
+            // $("#inner_wrap > p").css("color","pink");//자식요소 선택자
+//=====================================================================
+            // $("h1").prev().css("color","green"); //형(이전) 선택자
+//========================================================================
+            // $("h1").prev().css({"color":"red","font-size":"40px"})  //형(이전) 선택자
+            // $("h1").prevAll().css({"color":"red","font-size":"40px"})//전체 형 요소 선택자
+            // $("h1").nextAll.css({"color":"red","font-size":"40px"})//전체 동생 요소 선택자
+            // $("h1").siblings( ).css({"color":"red","font-size":"4opx"})// 전체 형제 선택자
+        });
+    </script>
+</head>
+<body>
+    <div id = "inner_wrap">
+        <P id="txt">JQuery Start</P>
+        <p class="tit">class seclector</p>
+        <h1>그룹 선택자</h1>
+        <h2>요소 선택자</h2>
+        <h3 class="tit">종속 선택자.</h3>
+    </div>
+    <!-- <script>
+    $("#txt").css("color","red");
+    </script> -->
+   
+</body>
+</html>

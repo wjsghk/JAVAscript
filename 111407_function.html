@@ -42,49 +42,77 @@
         // let a = add(10,20);
         // document.write(a);//30
 
-        var color = ["white","yellow","aqua","purple"];
-        var i =0;
-        function changeColor(){
-            i++;
-            if(i>=color.length){
-                i=0;
-            }
-            var bodyTag = document.getElementById("theBody");
-            bodyTag.style.backgroundColor=color[i];
-        }
+        // var color = ["white","yellow","aqua","purple"];
+        // var i =0;
+        // function changeColor(){
+        //     i++;
+        //     if(i>=color.length){
+        //         i=0;
+        //     }
+        //     var bodyTag = document.getElementById("theBody");
+        //     bodyTag.style.backgroundColor=color[i];
+        // }
         
         //====================================================
         //argument
-        function sum(){
-            let sum=arguments[0]+arguments[1]+arguments[2];
-            document.write(sum+"<br>");
-        }
-        sum(10,20,30); //60
+        // function sum(){
+        //     let sum=arguments[0]+arguments[1]+arguments[2];
+        //     document.write(sum+"<br>");
+        // }
+        // sum(10,20,30); //60
         
         
-        function sum(){
-            let sum1=0;        
-            for(let i=0;i<arguments.length;i++){
-                sum1 += arguments[i];
-            }
-            document.write(sum1+"<br>");
-        }
-        sum(10,20,30,40,50); //150
+        // function sum(){
+        //     let sum1=0;        
+        //     for(let i=0;i<arguments.length;i++){
+        //         sum1 += arguments[i];
+        //     }
+        //     document.write(sum1+"<br>");
+        // }
+        // sum(10,20,30,40,50); //150
 
+        // let sum4 =0;
+        // function sum(...number){
+        //     for(let i=0;i<number.length;i++){
+        //         sum4 += number[i];
+        //     }
+        //     document.write(sum4);
+        // }
+        // sum(10.20,30,40,50) //130
+        
         //p.140============================================================
-        function testAvg(arrData){
-        let sum3 =0;
-        for(var i = 0; i<arrData.length;i++){//2번째
-            sum3 += Number(prompt(arrData[i]+"점수는 ?","0"));
-        }
-        let avg=sum3/arrData.length;//세번째
-        return avg;
-        }
-        let arrSubject = ["국어","수학"];    //첫번째
-        let result = testAvg(arrSubject);
         
-        document.write("평균 점수는" + result + "점입니다.");
+        //function testAvg(arrData){
+        //let sum3 =0;
+        //for(var i = 0; i<arrData.length;i++){//2번째
+        //    sum3 += Number(prompt(arrData[i]+"점수는 ?","0"));
+        //}
+        //let avg=sum3/arrData.length;//세번째
+        //return avg;
+        //}
+        //let arrSubject = ["국어","수학"];    //첫번째
+        //let result = testAvg(arrSubject);
 
+        //document.write("평균 점수는" + result + "점입니다.");
+
+        //======================================================11.15
+        //즉시실행함수=자동호출함수
+        (function(x){
+            console.log(x*x);
+        }(2));//4       ()을 마지막 괄호안에 넣어준다.
+
+        
+        (mySquare = function(x){
+            console.log(x*x);//이름을 넣었을때는 ()를 바깥쪽으로 빼준다.
+        })(3);//9
+
+        mySquare(4);//16
+
+        var mySquare = (function(x){
+            return x*x;
+        }(5));//25
+
+        console.log(mySquare);
     </script>
 </head>
 <body id="theBody">
