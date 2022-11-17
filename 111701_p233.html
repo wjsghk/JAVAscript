@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //==================================================================================1번
+            ////객체(태그)편집 메소드(추가,삭제,수정)
+            $("#wrap p:eq(2)").after("<p>After</p>");//f12눌러서 요소부분 보면 추가되어있다.
+            $("#wrap p:eq(1)").before("<p>Before</p>");//기준요소를 앞에다 작성하고 추가되는 요소를 뒤에다 작성
+            $("<p>insertBefore</p>").insertBefore("#wrap p:eq(0)"); //추가되는 요소를 앞에다 작성하고 기준요소를 뒤에다 작성
+            
+            //append-맨 마지막,prepend-맨 처음
+            $("<li>appendTo</li>").appendTo("#listZone");
+            $("#listZone").prepend("<li>prepend</li>");
+
+            //clone-선택한요소 복제,empty-하위요소 전체 삭제,remove-선택한요소 삭제
+            var copyObj=$(".box1").children().clone();//.children이 있으면 자식만  없으면 전체 복사
+            $(".box3").append(copyObj);//복제후 추가를 해야 화면에 나타난다.
+            $(".box2").remove();//box2가 삭제
+            $(".box3").empty();
+
+            //=====================================================================================2번
+            // //replaceAll 선택요소 + 새요소 = replaceWith 새요소 + 선택요소
+            // $("h2").replaceWith("<h3>replace method</h3>");
+            // $("<p>Change</p>").replaceAll("div");
+
+            // //wrap,unwrap,wrapAll,wrapInner
+            // $("strong").unwrap(); //감싸져있는거를 삭제해라 f12들어가서 요소 부분확인 가능
+            // $(".ct1").wrap("<div/>");// 감싸져있다. 요소부분 들어가서 확인
+            // $(".ct2").wrapAll("<div/>");
+            // $("li").wrapInner("<h3/>");
+
+
+
+
+
+
+        });   
+    </script>
+</head>
+<body>
+    <!--============================================= 1번 -->
+    <div id="wrap">
+        <p>내용1</p>
+        <p>내용2</p>
+        <p>내용3</p>
+    </div>
+<hr>
+    <ul id="listZone">
+        <li>리스트</li>
+    </ul>    
+<hr>
+
+    <div class="box1">
+        <p>내용1</p>
+        <p>내용2</p>
+    </div>
+    <div class="box2">
+        <p>내용3</p>
+        <p>내용4</p>
+    </div>
+    <div class="box3">
+        <p>내용5</p>
+        <p>내용6</p>
+    </div>
+
+    <!-- ---------------------------------------------------------2번 -->
+    <!-- <section class="box1">
+        <h2>제목1</h2>
+        <div>내용1</div>
+        <div>내용2</div>
+    </section>
+    <section class="box2">
+        <h2>제목2</h2>
+        <div>내용3</div>
+        <div>내용4</div>
+<hr>
+        <h1 id="tit_1">
+            <strong>객체조작및 생성</strong>
+        </h1>
+        <p class="ct1">내용1</p>
+        <p class="ct1">내용2</p>
+        <p class="ct2">내용3</p>
+        <p class="ct2">내용4</p>
+        <ul>
+            <li>내용3</li>
+            <li>내용4</li>
+        </ul> -->
+    </section>
+</body>
+</html>

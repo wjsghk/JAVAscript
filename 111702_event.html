@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        //이벤트 등록 메서드 f12 요소 부분과 같이 보면서 추가되는거 확인하기
+        //1번===========================================================
+        $(function(){
+            
+        //     $(".btn1").click(function(){
+        //         $(".btn1").parent().next().css({"color":"#f00"}); //p태그가 부모 ,//버튼을 누르면 내용부분 색 변환
+        //     });
+        // $(".btn2").on({
+        //     "mouseover focus":function(){
+        //         $(".btn2").parent().next().css({"color":"blue"});//마우스 갖다댈시 파란색
+        //     },
+        //     "mouseout blur":function(){
+        //         $(".btn2").parent().next().css({"color":"green"});//마우스 땔시 그린색
+        //     },
+        // });
+        // //이벤트 제거 메서드 위 등로메서드와 같은 body라인으로 적용시키기
+        // $(".btn1").off("click");
+        // $(".btn2").off("mouseover focus");
+
+        //2번===============================================================
+        //단독이벤트 click,dblclick
+        // $(".btn1").on("click",function(e){
+        //     e.preventDefault();//preventDefault은 <a>,<form> 태그에 이벤트를 차단하는 기본형
+        //     $(".txt1").css({"background-color":"#ff0"});
+        // });
+        // //
+        // $(".btn2").on("click",function(e){
+        //     $(".txt2").css({"background-color":"#0ff"});
+        //     return false; //return은 <a>,<form> 태그에 이벤트를 차단하는 기본형 =>return값이 없으면 하이퍼링크까지 작동됨
+        // });
+        // $(".btn3").on("dblclick",function(e){
+        //     $(".txt3").css({"background-color":"green"});
+        // });
+
+         //3번===============================================================
+         //mouseover,mouseout,hover,mouseenter,mouseleave 이벤트
+            // $(".btn1").on({
+            //     "mouseover":function(){//마우스 갖다대면 노란색
+            //         $(".txt1").css({"background-color":"yellow"});
+            //     },
+            //     "mouseout":function(){//마우스 뺄 때 none 효과
+            //         $(".txt1").css({"background":"none"});
+            //     },
+            // });
+            // $(".btn2").hover(function(){//마우스 갖다대면 파란색
+            //         $(".txt2").css({"background-color":"aqua"});
+            //     },
+            //     function(){
+            //         $(".txt2").css({"background":"none"});
+            //     });
+            
+            //     $(".btn1").on({//마우스 오버와 똑같은 역할이다.
+            //     "mouseenter":function(){//마우스 갖다대면 노란색
+            //         $(".txt1").css({"background-color":"yellow"});
+            //     },
+            //     "mouseleave":function(){//마우스 뺄 때 none 효과
+            //         $(".txt1").css({"background":"none"});
+            //     },
+            // });
+    //=====================================================----------------=4번
+                //mousemove 이벤트
+                // $(document).on("mousemove",function(e){
+                //     $(".posX").text(e.pageX);
+                //     $(".posY").text(e.pageY);
+                // });
+//=====================================================----------------=5번
+                //스크롤이벤트 메서드
+            //     $(window).on("scroll",function(){
+            //         let sc_top = $(this).scrollTop();
+            //         let sc_left = $(this).scrollLeft();
+
+            //         $(".top").text(sc_top);
+            //         $(".left").text(sc_left);
+                
+            //     if(sc_top <= 200){
+            //         $("body").css("background-color","red");
+            //     }else if(sc_top <= 1000){
+            //         $("body").css("background-color","yellow");
+            //     }else if(sc_top <= 3000){
+            //         $("body").css("background-color","aqua");
+            //     }
+                   
+            // });
+//=====================================================----------------=6번
+            //포커스 메소드 focus,blur
+//             $("#user_id_1").on("focus",function(){
+//                 $(this).css({//this가 가리키는거는 "#user_id_1"
+//                     "background-color":"pink"});
+//                 });
+
+//             $("#user_id_1").on("blur",function(){//"blur는 달ㄴ요소로 이동할 때 발생
+//                 $(this).css({//this가 가리키는거는 "#user_id_1"
+//                     "background-color":"orange"});
+//                 });
+// //=====================================================----------------=7번
+//                 //change 메소드: blur 이벤트가 발생하는 순간 change이벤트가 발생
+//                 $("#rel_site").on("change",function(){
+//                     $(".txt").text($(this).val());//p태그에 value 값이 출력
+//                 });
+
+//                 $("#id").on("change",function(){
+//                     $(".txt").text($(this).val());//p태그에 value 값이 출력
+//                 });
+
+
+// //=====================================================----------------=8번
+                //"keydown 이벤트
+                let words = ["돈","한성호","성호"];
+                $("#id").on("keydown",function(){
+                    let term = $(this).val();
+                    $(".txt").text(term);
+                    for(let i = 0; i<3;i++){
+                        if(term == words[i]){
+                            $(".txt").text("사용이 불가한 단어 입니다.")
+                        }
+                    }
+                });
+
+
+    });
+    </script>
+    <style>
+        /* 5번 코드 이용할때 주석해제 */
+        /* body{
+            height: 10000px;
+            width: 5000px;
+        } */
+
+        /* 왼쪽,위 10px에 고정시키겠다. */
+        /* #wrap{
+            position: fixed;
+            left: 10px;
+            top: 10px;
+        } */
+    </style>
+</head>
+<body>
+    <!-- ===============================================================1번 -->
+    <!-- <p>
+        <button class="btn1">버튼1</button>
+    </p>
+    <p>내용1</p>
+    <p>
+        <button class="btn2">버튼2</button>
+    </p>
+    <p>내용2</p>
+<hr> -->
+
+    <!-- ==============================================================2번 -->
+    <!-- <P>
+    <a href="http://www.easyspub.co.kr/" class="btn1">버튼1</a></p> 
+    </P>
+    <p class="txt1">내용1</p> 
+    <p><a href="http://www.easyspub.co.kr/" class="btn2">버튼2</a></p> 
+    <p class="txt2">내용2</p> 
+    <p><button class="btn3">버튼3</button></p> 
+    <p class="txt3">내용3</p>  -->
+
+    <!-- ==============================================================3번 -->
+    <!-- <p>
+        <button class="btn1">Mouse Over/Mouse Out</button>
+    </p>
+    <p class="txt1">내용1</p>
+    <p>
+        <button class="btn2">Hover</button>
+    </p>
+    <p class="txt2">내용2</p> -->
+
+<!-- =====================================================================4번 -->
+    <!-- <h1>mousemove</h1>
+    <p>X:<span class="posX">0</span>px</p>
+    <p>Y:<span class="posY">0</span>px</p> -->
+
+<!-- ----------------------------------------------------------------------5번 -->
+    <!-- <div id="wrap">
+        <p>scrollTop:<span class="top">0</span>px</p>
+        <p>scrollLeft:<span class="left">0</span>px</p>
+    </div> -->
+
+    <!-- ----------------------------------------------------------------------6번 -->
+    <!-- <from action="#">
+        <p>
+            <label for="user_id_1">ID</label>
+            <input type="text" name="user_id_i" id="user_id_1">
+        </p>
+    </from>
+    <hr> -->
+
+    <!-- ----------------------------------------------------------------------7번 -->
+    <!-- <input type="text" name="id" id="id">
+    <br>
+    <select id="rel_site">
+        <option value="">사이트 선택</option>
+        <option value="wwww.google.com">구글</option>
+        <option value="www.naver.com">네이버</option>
+        <option value="www.daum.net">다음</option>
+    </select>
+    <p class="txt"></p> -->
+ <!-- ----------------------------------------------------------------------8번 -->
+    <h1>금지어 필터링</h1>   
+    <label>답글 :</label>
+    <input type="text" name="id" id="id">
+    <P class="txt"></P>
+</body>
+</html>

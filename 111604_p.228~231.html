@@ -22,23 +22,23 @@
 //===================================================================================
 
             // 2번
-            let $txt1 = $(".txt_1 span");// $를 붙인 변수이다.
-            let $txt2 = $(".txt_2 span");
-            let $box = $(".box");
-            let off_top = $box.offset().top;
-            let pos_top = $box.position().top;
+            // let $txt1 = $(".txt_1 span");// $를 붙인 변수이다.
+            // let $txt2 = $(".txt_2 span");
+            // let $box = $(".box");
+            // let off_top = $box.offset().top;
+            // let pos_top = $box.position().top;
             
-            $txt1.text(off_top); //절대좌표
-            $txt2.text(pos_top); //상대좌표
+            // $txt1.text(off_top); //절대좌표
+            // $txt2.text(pos_top); //상대좌표
 //==================================================================================
             //3번
-            // let topoff = $("h1").offset().top; 
-            // $(window).scrollTop(topoff);
-            // let sct = $(window).scrollTop();
-            // console.log(sct);//2000px 부분에서 이동한다   
-            // if(sct ==2000){
-            //     $("body").css("background-color","skyblue");
-            // }
+            let topoff = $("h1").offset().top; 
+            $(window).scrollTop(topoff);
+            let sct = $(window).scrollTop();
+            console.log(sct);//2000px 부분에서 이동한다   
+            if(sct ==2000){
+                $("body").css("background-color","skyblue");
+            }
             
 
             
@@ -54,20 +54,20 @@
         } */
 /* //====================================================== */
         /* 2번 */
-        *{
+        /* *{
             margin: 0;
             padding: 0;
-        } 
+        }  */
         /* 부모박스 */
-        #box_wrap{
+        /* #box_wrap{
             width: 300px;
             height: 200px;
             margin: 50px auto 0;
             position: relative;
             background-color: rgb(85, 52, 11);
-        }
+        } */
         /* 자식박스 */
-        .box{
+        /* .box{
             width: 50px;
             height: 50px;
             position: absolute;
@@ -75,7 +75,7 @@
             top: 50px;
             background-color: black;
             color: aliceblue;
-        }
+        } */
 /* =================================================================== */
         /* 3번  */
         /* *{
@@ -100,11 +100,11 @@
         <p id="p2">내용2</p> -->
 <!-- ============================================================================== -->
     <!-- 2번 -->
-    <div id="box_wrap">
+    <!-- <div id="box_wrap">
         <P class="box">박스</P>
     </div>
     <p class="txt_1">요소위치메소드(position,offset)절대top위칫값:<span></span></p>
-    <p class="txt_2">상대top위칫값:<span></span></p>
+    <p class="txt_2">상대top위칫값:<span></span></p> -->
 <!-- ============================================================================== -->
     <!-- 3번 -->
     <!-- <div id="wrap">
