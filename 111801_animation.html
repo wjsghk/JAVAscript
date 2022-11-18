@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+         $(function(){
+        //// ================================================================1번
+        //     $(".btn2").hide();
+        //     $(".btn1").on("click",function(){
+        //         $(".box").slideUp(1000,"linear",function(){//버튼도 fadein으로 바뀐다.
+        //         $(".btn1").hide();
+        //         $(".btn2").show();
+        //     });
+        // });
+
+        // $(".btn2").on("click",function(){//다시 div태그가 나온다. //버튼도 fadein으로 바뀐다.
+        //     $(".box").fadeIn(1000,"swing",function(){
+        //         $(".btn1").show();
+        //         $(".btn2").hide();
+        //     });
+        // });
+
+        // $(".btn3").on("click",function(){
+        //     $(".box").slideToggle(1000,"linear");//슬라이드 다운 or 업이 된다.
+        // });
+
+        //================================================================2번
+            $(".btn1").on("click",function(){
+                $(".txt1").animate({
+                    marginLeft:"500px",//왼쪽으로 늘리겠다
+                    fontSize:"30px"
+                },
+                2000,"linear",function(){//2000은 2초 lineat= 균등하게 진행
+                    alert("모션완료!");
+                
+                });
+            });
+
+            $(".btn2").on("click",function(){
+                $(".txt2").animate({
+                    marginLeft:"+=100px"},1000);
+            });
+
+
+
+        });
+    </script>
+    <style>
+        /* ==============================================================================1번 */
+        /* .content{
+            width: 400px;
+            background-color: #eee;
+        } */
+
+        /* =================================================================================2번 */
+        .txt1{background-color: aqua;}
+        .txt2{background-color: pink;}
+        
+    </style>
+</head>
+<body>
+    <!-- ==================================================================================1번 -->
+    <!-- <p>
+        <button class="btn1">sildeUp</button>
+        <button class="btn2">fadeIn</button>
+    </p>
+    <p>
+        <button class="btn3">toggleSilde</button>
+    </p>
+    <p>
+        <button class="btn4">fadeTo(0.3)</button>
+        <button class="btn5">fadeTo(1)</button>
+    </p>
+    <div class="box">
+        <div class="content">
+            Lorem ipsum dolor sit amet,consectetur adipiscing elit.ut...
+        </div>
+    </div> -->
+    
+
+    <!-- ==================================================================================2번 -->
+    <p><button class="btn1">버튼1</button></p>
+    <span class="txt1">"500px"이동</span>
+    <p><button class="btn2">버튼2</button></p>
+    <span class="txt2">"50px"씩 이동</span>
+</body>
+</html>
